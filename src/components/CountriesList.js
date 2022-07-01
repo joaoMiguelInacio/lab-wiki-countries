@@ -82,7 +82,8 @@ const ImageMarked = styled('span')(({ theme }) => ({
           style={{
             width: image.width,
           }}
-        >
+        > 
+          <Link to={`/${alpha3Code}`} className = "country-link">
           <ImageSrc style={{ backgroundImage: `url(${image.url})` }} />
           <ImageBackdrop className="MuiImageBackdrop-root" />
           <Image>
@@ -96,11 +97,12 @@ const ImageMarked = styled('span')(({ theme }) => ({
                 pt: 2,
                 pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
               }}
-            >
-              <Link to={`/${alpha3Code}`} className = "country-link">{image.title}</Link>
+            > 
+              {image.title}
               <ImageMarked className="MuiImageMarked-root" />
             </Typography>
           </Image>
+          </Link>
         </ImageButton>
   );
 }
