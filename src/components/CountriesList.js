@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export default function CountriesList ({name, alpha3Code, alpha2Code}) {
   const image = 
   {
-    url: `https://flagpedia.net/data/flags/icon/72x54/${alpha2Code.toLowerCase()}.png`,
+    url: `https://flagpedia.net/data/flags/w702/${alpha2Code.toLowerCase()}.webp`,
     title: `${name.common}`,
     width: '20%',
   };

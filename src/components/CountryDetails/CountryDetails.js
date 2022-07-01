@@ -3,7 +3,7 @@ import './ContryDetails.css';
 export default function CountryDetails ({country, displayBorders}) {
   return (
     <div className='country-details'>
-      <h3>{country.name.common}</h3>
+      <h3>{country.name.common} <img src={`https://flagpedia.net/data/flags/icon/72x54/${country.alpha2Code.toLowerCase()}.png`}/></h3>
         <div className='capital-area-borders'>
           <div className='capital-area'>
           <p><span className='strong'>Capital: </span>{country.capital}</p>
