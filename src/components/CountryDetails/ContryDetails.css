@@ -1,0 +1,22 @@
+.country-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.capital-area-borders {
+    display: flex;
+    justify-content: center;
+    gap: 300px;
+    align-items: center;
+}
+
+.strong {
+    font-weight: bold;
+}
+
+.border-list-items {
+ list-style: none;
+ font-weight: lighter;
+ text-align: center;
+}

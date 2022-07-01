@@ -5,3 +5,9 @@
 .map-container-small {
     height: 400px;
 }
+
+.navbar-container {
+    display: flex;
+    gap: 30px;
+    padding-left: 30px;
+}

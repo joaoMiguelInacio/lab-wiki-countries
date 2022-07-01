@@ -1,6 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import CountriesList from "../components/CountriesList";
+import CountriesList from "../../components/CountriesList";
+import ProgressIndicator from "../../components/ProgressIndicator";
+import "./CountriesPage.css";
+import Box from '@mui/material/Box';
 
 export default function CountriesPage() {
   const [ countries, setCountries ] = useState(null);
@@ -24,11 +27,16 @@ export default function CountriesPage() {
   }
 
   return (
-    <div>
-      <h1>Countries List</h1>
+    <>
       {
-        countries ? displayCountries() : <p>Loading...</p>
+        countries 
+        ? <>
+            <Box className="box" sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, width: '100%'}}>
+              {displayCountries()}
+            </Box>
+          </>
+        : <ProgressIndicator />
       }
-    </div>
+    </>
   )
 }

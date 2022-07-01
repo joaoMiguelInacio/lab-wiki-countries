@@ -2,8 +2,8 @@ import { Route, Routes } from "react-router-dom";
 import React from 'react';
 import "./App.css";
 import Homepage from "./pages/Homepage";
-import Navbar from "./components/Navbar";
-import CountriesPage from "./pages/CountriesPage.js";
+import Navbar from "./components/Navbar/Navbar";
+import CountriesPage from "./pages/CountriesPage/CountriesPage.js";
 import CountryPage from "./pages/CountryPage";
 
 function App() {

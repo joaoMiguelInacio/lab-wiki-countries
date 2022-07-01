@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState, useRef } from 'react';
-import CountryDetails from '../components/CountryDetails';
+import CountryDetails from '../components/CountryDetails/CountryDetails';
+import ProgressIndicator from '../components/ProgressIndicator';
 import { useParams } from 'react-router-dom';
 import mapboxgl from 'mapbox-gl';
 
@@ -35,20 +36,19 @@ export default function CountryPage() {
 
   const displayBorders = (country) => {
     return country.borders.map((border) => (
-      <li key={country.borders.indexOf(border)}>{border}</li>
+      <li className='border-list-items' key={country.borders.indexOf(border)}>{border}</li>
     ));
   };
 
   return (
     <div>
-      <h1>Country Page</h1>
       {country ? (
         <>
           <CountryDetails country={country} displayBorders={displayBorders} />
           <div ref={mapContainer} className="map-container-small" />
         </>
       ) : (
-        <p>Loading...</p>
+        <ProgressIndicator />
       )}
     </div>
   );
