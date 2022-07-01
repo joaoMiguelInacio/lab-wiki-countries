@@ -9,7 +9,7 @@ export default function CountryDetails ({country, displayBorders}) {
           <p><span className='strong'>Capital: </span>{country.capital}</p>
           <p><span className='strong'>Area: </span>{country.area} km2</p>
           </div>
-          {country.borders.lenght > 0
+          {country.borders.length > 0
             ? <p className='strong'>
                 Borders:
                 {displayBorders(country)}
