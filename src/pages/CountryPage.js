@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useEffect, useState, useRef } from 'react';
 import CountryDetails from '../components/CountryDetails/CountryDetails';
 import ProgressIndicator from '../components/ProgressIndicator';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import mapboxgl from 'mapbox-gl';
 
 mapboxgl.accessToken =
@@ -36,7 +36,7 @@ export default function CountryPage() {
 
   const displayBorders = (country) => {
     return country.borders.map((border) => (
-      <li className='border-list-items' key={country.borders.indexOf(border)}>{border}</li>
+      <Link to={`/${border}`} key={country.borders.indexOf(border)}>{border}</Link>
     ));
   };
 

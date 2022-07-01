@@ -15,8 +15,18 @@
     font-weight: bold;
 }
 
-.border-list-items {
- list-style: none;
- font-weight: lighter;
- text-align: center;
+.center {
+    text-align: center;
+}
+
+.borders-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 20vw;
+    justify-content: center;
+}
+
+.borders-container > a {
+    font-weight: normal;
 }

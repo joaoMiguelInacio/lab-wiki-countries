@@ -10,10 +10,14 @@ export default function CountryDetails ({country, displayBorders}) {
           <p><span className='strong'>Area: </span>{country.area} km2</p>
           </div>
           {country.borders.length > 0
-            ? <p className='strong'>
-                Borders:
-                {displayBorders(country)}
-              </p>
+            ? <div>
+                <p className='strong center'>
+                  Borders:
+                </p>
+                <div className='borders-container'>
+                  {displayBorders(country)}
+                </div>
+              </div>
             : null
           }
         </div>
