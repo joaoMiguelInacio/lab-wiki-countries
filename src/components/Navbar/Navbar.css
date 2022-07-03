@@ -5,3 +5,13 @@
 .navbar-container {
   align-items: center;
 }
+
+.search-input {
+  background-color: white !important;
+  border-radius: 5px;
+}
+
+.search-form {
+  display: flex;
+  color: white !important;
+}

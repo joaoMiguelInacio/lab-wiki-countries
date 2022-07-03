@@ -1,18 +1,12 @@
 import axios from 'axios';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import CountryDetails from '../components/CountryDetails/CountryDetails';
 import ProgressIndicator from '../components/ProgressIndicator';
 import { useParams, Link } from 'react-router-dom';
-import mapboxgl from 'mapbox-gl';
-
-mapboxgl.accessToken =
-  'pk.eyJ1Ijoiam9hb2luYWNpbyIsImEiOiJjbDUxcHJjNWkwM3EzM2luNW1wend0dGN1In0.h1t40XnWVgagSH9q8FVG1w';
 
 export default function CountryPage() {
   const { id } = useParams();
   const [country, setCountry] = useState(null);
-  const mapContainer = useRef(null);
-  const map = useRef(null);
   useEffect(() => {
     const fetchCountry = async () => {
       try {
@@ -20,13 +14,6 @@ export default function CountryPage() {
           `https://ih-countries-api.herokuapp.com/countries/${id}`
         );
         setCountry(response.data);
-        if (map.current) return;
-        map.current = new mapboxgl.Map({
-          container: mapContainer.current,
-          style: 'mapbox://styles/mapbox/streets-v11',
-          center: [response.data.latlng[1], response.data.latlng[0]],
-          zoom: 5,
-        });
       } catch (error) {
         console.error(error);
       }
@@ -45,7 +32,6 @@ export default function CountryPage() {
       {country ? (
         <>
           <CountryDetails country={country} displayBorders={displayBorders} />
-          <div ref={mapContainer} className="map-container-small" />
         </>
       ) : (
         <ProgressIndicator />
