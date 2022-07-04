@@ -1,38 +1,38 @@
 import './ContryDetails.css';
-import { useRef, useEffect, useState} from 'react';
-import mapboxgl from 'mapbox-gl';
+// import { useRef, useEffect, useState} from 'react';
+// import mapboxgl from 'mapbox-gl';
 
 
 
 export default function CountryDetails ({country, displayBorders}) {
 
-  const MapboxGLMap = (lng, lat) => {
-    const [map, setMap] = useState(null);
-    const mapContainer = useRef(null);
+  // const MapboxGLMap = (lng, lat) => {
+  //   const [map, setMap] = useState(null);
+  //   const mapContainer = useRef(null);
 
-  useEffect(() => {
-    mapboxgl.accessToken =
-  'pk.eyJ1Ijoiam9hb2luYWNpbyIsImEiOiJjbDUxcHJjNWkwM3EzM2luNW1wend0dGN1In0.h1t40XnWVgagSH9q8FVG1w';
-    const initializeMap = ({ setMap, mapContainer }) => {
-      const map = new mapboxgl.Map({
-        container: mapContainer.current,
-        style: "mapbox://styles/mapbox/streets-v11", // stylesheet location
-        center: [lng, lat],
-        zoom: 5
-      });
+  // useEffect(() => {
+  //   mapboxgl.accessToken =
+  // 'pk.eyJ1Ijoiam9hb2luYWNpbyIsImEiOiJjbDUxcHJjNWkwM3EzM2luNW1wend0dGN1In0.h1t40XnWVgagSH9q8FVG1w';
+  //   const initializeMap = ({ setMap, mapContainer }) => {
+  //     const map = new mapboxgl.Map({
+  //       container: mapContainer.current,
+  //       style: "mapbox://styles/mapbox/streets-v11", // stylesheet location
+  //       center: [lng, lat],
+  //       zoom: 5
+  //     });
 
-      map.on("load", () => {
-        setMap(map);
-        map.resize();
-      });
-    };
+  //     map.on("load", () => {
+  //       setMap(map);
+  //       map.resize();
+  //     });
+  //   };
 
-    initializeMap({ setMap, mapContainer });
-  }, [country]);
+  //   initializeMap({ setMap, mapContainer });
+//   // }, [country]);
   
-    return (<div ref={el => (mapContainer.current = el)} className="map-container-small"/>);
+//     return (<div ref={el => (mapContainer.current = el)} className="map-container-small"/>);
   
-};
+// };
 
   return (
     <div className='country-details'>
@@ -54,7 +54,7 @@ export default function CountryDetails ({country, displayBorders}) {
             : null
           }
         </div>
-      {MapboxGLMap(country.latlng[1], country.latlng[0])}
+      {/* {MapboxGLMap(country.latlng[1], country.latlng[0])} */}
     </div>
   )
 }

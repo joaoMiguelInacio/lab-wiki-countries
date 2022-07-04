@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import CountryDetails from '../components/CountryDetails/CountryDetails';
 import ProgressIndicator from '../components/ProgressIndicator';
 import { useParams, Link } from 'react-router-dom';
+import CountryMap from '../components/CountryMap';
 
 export default function CountryPage() {
   const { id } = useParams();
@@ -31,7 +32,8 @@ export default function CountryPage() {
     <div>
       {country ? (
         <>
-          <CountryDetails country={country} displayBorders={displayBorders} />
+          <CountryDetails country={ country } displayBorders={ displayBorders } />
+          <CountryMap lat = { country.latlng[1]} lng ={country.latlng[0] }/>
         </>
       ) : (
         <ProgressIndicator />
